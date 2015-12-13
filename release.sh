@@ -14,10 +14,16 @@ then
 fi
 
 git checkout $SOURCE_BRANCH
-
 if [ "$?" = "1" ]
 then
 	exit "Failed to checkout $SOURCE_BRANCH"
+fi
+
+git pull origin $SOURCE_BRANCH
+
+if [ "$?" = "1" ]
+then
+	exit "Failed to pull $SOURCE_BRANCH from the origin"
 fi
 
 git checkout -b $SOURCE_BRANCH--$TAG
