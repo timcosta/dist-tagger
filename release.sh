@@ -66,3 +66,6 @@ fi
 
 git checkout $SOURCE_BRANCH
 git branch -D $SOURCE_BRANCH--$TAG
+
+git commit -m "Tagged $TAG at this point." --allow-empty
+git push origin $SOURCE_BRANCH
